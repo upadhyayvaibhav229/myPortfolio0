@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../src/output.css" rel="stylesheet" />
+    <title>Vaibhav Upadhyay</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-slate-900">
+    <!-- Navbar Container -->
+
+    <nav
+      class="container flex items-center justify-between p-4 bg-slate-900 w-[100%]"
+    >
+      <!-- Left Section: Logo -->
+      <div class="flex items-center gap-2">
+        <img src="img/logo.png" alt="Logo" class="w-10 h-10 rounded-full" />
+        <h1 class="text-yellow-500 text-xl font-mono">Vaibhav</h1>
+      </div>
+
+      <!-- Center Section: Social Media Icons (only visible on larger screens) -->
+      <div class="hidden md:flex gap-6">
+        <i class="fa-brands fa-github text-yellow-500 text-3xl"></i>
+        <i class="fa-brands fa-instagram text-yellow-500 text-3xl"></i>
+        <i class="fa-brands fa-linkedin-in text-yellow-500 text-3xl"></i>
+        <i class="fa-brands fa-twitter text-yellow-500 text-3xl"></i>
+      </div>
+
+      <div class="border border-yellow-500 p-2 rounded-full hidden md:block">
+        <i class="fa fa-cog text-yellow-500 text-3xl"></i>
+      </div>
+
+      <div
+        class="md:hidden text-gray-400 text-3xl cursor-pointer"
+        onclick="toggleNavbar()"
+      >
+        <i class="fa fa-bars"></i>
+      </div>
+      <!-- Right Section: Theme Changer Icon -->
+    </nav>
+
+    <div
+      id="navbar-content"
+      class="md:hidden flex flex-row justify-around items-center gap-6 mt-4 hidden"
+    >
+      <div class="border border-yellow-500 p-2 rounded-full mt-20">
+        <i class="fa fa-cog text-yellow-500 text-3xl"></i>
+      </div>
+
+      <div class="flex flex-col gap-4 p-5 mr-5">
+        <i class="fa-brands fa-github text-yellow-500 text-3xl"></i>
+        <i class="fa-brands fa-instagram text-yellow-500 text-3xl"></i>
+        <i class="fa-brands fa-linkedin-in text-yellow-500 text-3xl"></i>
+        <i class="fa-brands fa-twitter text-yellow-500 text-3xl"></i>
+      </div>
+    </div>
+
+    <!-- Navbar ends here -->
+
+    <!-- Hero section starts here -->
+    <div
+      class="container flex flex-wrap justify-around items-center bg-slate-700 md:min-h-screen pb-10"
+    >
+      <!-- Text Content -->
+      <div class="p-2 pt-5 ml-4">
+        <h1 class="text-white text-xl font-bold leading-6">Hello, I'm</h1>
+        <h1 class="text-yellow-500 text-2xl font-bold">Vaibhav Upadhyay</h1>
+        <h1 class="text-white text-3xl font-bold leading-7">
+          Full Stack Developer
+        </h1>
+        <p class="text-white text-xl leading-8">
+          Lorem ipsum dolor sit amet consectetur, <br />
+          adipisicing elit. Saepe, minus?
+        </p>
+        <div class="flex space-x-2">
+          <button
+            class="px-6 py-2 mt-4 rounded-lg bg-yellow-300 hover:bg-yellow-400 text-lg font-semibold"
+          >
+            Hire Me!
+          </button>
+          <button
+            class="px-9 py-2 mt-4 rounded-lg bg-transparent border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-400 hover:text-black text-lg font-semibold"
+          >
+            Download CV
+          </button>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div>
+        <img
+          class="w-[500px] rounded-full"
+          src="img/vaibhav.png"
+          alt="Profile Image"
+        />
+      </div>
+
+      <!-- Experience Section -->
+      <div class="bg-slate-900 text-white rounded-lg h-64 w-72 p-4 mt-4">
+        <div class="mt-3">
+          <h1 class="text-2xl text-yellow-500">20+</h1>
+          <p class="text-xl">Demo Project</p>
+          <div class="border-2 mt-3 rounded-lg"></div>
+          <h1 class="text-2xl text-yellow-500 mt-3">99%</h1>
+          <p class="text-xl">Happy Client</p>
+          <div class="border-2 mt-3"></div>
+        </div>
+      </div>
+
+      <!-- Menu -->
+      <div
+        class="flex-col h-50 w-24 border-2 border-yellow-500 mt-12 text-center rounded-lg md:block hidden"
+      >
+        <ul class="list-none md:space-y-6 space-x-2 cursor-pointer">
+          <li class="hover:bg-slate-950 py-3 rounded-lg">
+            <a href="#home" class="flex flex-col items-center">
+              <i class="fa fa-home text-white md:text-3xl text-xl"></i>
+              <span class="text-white text-sm font-semibold mt-2">Home</span>
+            </a>
+          </li>
+          <li class="hover:bg-slate-950 py-3 rounded-lg">
+            <a href="#about" class="flex flex-col items-center">
+              <i class="fa fa-user text-white text-3xl"></i>
+              <span class="text-white text-sm font-semibold mt-2">About</span>
+            </a>
+          </li>
+          <li class="hover:bg-slate-950 py-3 rounded-lg">
+            <a href="#" class="flex flex-col items-center">
+              <i class="fa fa-gear text-white text-3xl"></i>
+              <span class="text-white text-sm font-semibold mt-2"
+                >Services</span
+              >
+            </a>
+          </li>
+          <li class="hover:bg-slate-950 py-3 rounded-lg">
+            <a href="#" class="flex flex-col items-center">
+              <i class="fa fa-layer-group text-white text-3xl"></i>
+              <span class="text-white text-sm font-semibold mt-2">Skills</span>
+            </a>
+          </li>
+          <li class="hover:bg-slate-950 py-3 rounded-lg">
+            <a href="#" class="flex flex-col items-center">
+              <i class="fa fa-address-card text-white text-3xl"></i>
+              <span class="text-white text-sm font-semibold mt-2">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hero SEctiont ends here -->
+
+    <!-- About Me Section -->
+    <section id="#about">
+      <div class="flex w-full justify-center items-center bg-slate-800 py-10">
+        <!-- Reduced padding -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-center bg-slate-900 p-6 max-w-7xl mx-auto"
+        >
+          <div class="text-white md:w-1/2 space-y-4 text-center md:text-left">
+            <!-- Reduced space-y -->
+            <h1 class="text-2xl text-center">About Me</h1>
+            <h2 class="md:text-4xl text-xl font-mono font-bold text-left">
+              Professional
+              <span class="text-yellow-500">Problem Solutions</span> For Digital
+              Products
+            </h2>
+            <p class="md:text-lg md:leading-relaxed text-left text-wrap">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              rem quo id vero, esse magni voluptatem quam, accusamus earum
+              facere odit molestiae voluptatem, aliquid laudantium! Et excepturi
+              repellat labore doloribus!
+            </p>
+            <div
+              class="md:flex flex-wrap gap-4 mt-2 justify-center md:justify-start"
+            >
+              <!-- Reduced gap -->
+              <div class="flex items-center gap-2 text-yellow-500">
+                <span class="text-2xl">✔️</span>
+                <p>Frontend Development</p>
+              </div>
+              <div class="flex items-center gap-2 text-yellow-500">
+                <span class="text-2xl">✔️</span>
+                <p>Backend Development</p>
+              </div>
+            </div>
+            <!-- Contact Info -->
+            <div
+              class="md:flex flex-wrap gap-4 mt-2 justify-center md:justify-start"
+            >
+              <!-- Reduced gap and mt -->
+              <div class="flex items-center gap-2 text-yellow-500">
+                <span class="text-3xl bg-yellow-500 rounded-full p-2">
+                  <i class="fa fa-envelope text-black"></i>
+                </span>
+                <p class="text-bold text-left">
+                  Email Me :<br />
+                  upadhyayvaibhav229@gmail.com
+                </p>
+              </div>
+              <div class="flex items-center mt-4 gap-2 text-yellow-500">
+                <span class="text-3xl bg-yellow-500 rounded-full p-2">
+                  <i class="fa fa-phone text-black"></i>
+                </span>
+                <p class="text-left">
+                  Make A Call <br />
+                  +91 9004523446
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Section -->
+          <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
+            <img
+              src="img/img.png"
+              alt="About Me Image"
+              class="w-100 h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience and Education Section -->
+      <div class="flex flex-col items-center bg-slate-800 py-10">
+        <!-- Reduced padding -->
+        <div class="w-full h-auto p-4 flex flex-wrap justify-around">
+          <div class="mt-10">
+            <img src="img/education (1).png" alt="" />
+          </div>
+          <div class="flex flex-col gap-5">
+            <!-- Reduced gap -->
+
+            <h1 class="text-center text-2xl font-bold text-white">
+              My <span class="text-yellow-500">Experience</span> & Education
+            </h1>
+
+            <!-- Education Section -->
+            <div class="mt-4">
+              <!-- Reduced margin-top -->
+              <h2 class="text-yellow-500 text-2xl text-center font-bold">
+                My Education
+              </h2>
+              <div class="flex flex-wrap gap-4 md:justify-around mt-4">
+                <!-- Reduced gap and margin-top -->
+
+                <!-- Current Course -->
+                <div class="flex flex-col bg-slate-900 p-4 rounded-lg w-80">
+                  <!-- Reduced padding -->
+                  <div class="flex items-center">
+                    <img class="w-8" src="img/tick.png" alt="Tick Icon" />
+                    <p class="text-white text-xl mx-2">2024 - Present</p>
+                  </div>
+                  <h2 class="text-xl text-white mt-2">
+                    Full Stack Development Course
+                  </h2>
+                  <h3 class="text-md text-white">Location: Andheri</h3>
+                </div>
+
+                <!-- Bachelor's Degree -->
+                <div class="flex flex-col bg-slate-900 p-4 rounded-lg w-80">
+                  <!-- Reduced padding -->
+                  <div class="flex items-center">
+                    <img class="w-8" src="img/tick.png" alt="Tick Icon" />
+                    <p class="text-white text-xl mx-2">2019 - 2023</p>
+                  </div>
+                  <h2 class="text-xl text-white mt-2">
+                    Bachelor's Degree in Computer Science
+                  </h2>
+                  <h3 class="text-md text-white">
+                    T.P. Bhatia College of Science and Commerce
+                  </h3>
+                </div>
+
+                <!-- High School -->
+                <div class="flex flex-col bg-slate-900 p-4 rounded-lg w-80">
+                  <!-- Reduced padding -->
+                  <div class="flex items-center">
+                    <img class="w-8" src="img/tick.png" alt="Tick Icon" />
+                    <p class="text-white text-xl mx-2">2015 - 2017</p>
+                  </div>
+                  <h2 class="text-xl text-white mt-2">High School Diploma</h2>
+                  <h3 class="text-md text-white">Sardar Vallabhbhai Patel</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About me end here -->
+
+    <!-- Service Section starts here -->
+    <section class="max-h-screen w-full p-5" id="service">
+      <div class="text-white space-y-4 text-center md:text-center">
+        <h1 class="text-white text-3xl p-5 font-bold">Popular Services</h1>
+        <p class="text-white text-2xl leading-relaxed">
+          My
+          <span class="text-yellow-500">Special Service</span> For your <br />
+          Frontend & Backend Dev.
+        </p>
+      </div>
+
+      <!-- Cards -->
+      <div
+        class="p-4 mt-5 mx-auto md:flex md:flex-wrap justify-around h-auto max-w-7xl overflow-y-auto flex md:overflow-visible scrollbar-thin scrollbar-thumb-yellow-500 scrollbar-track-gray-800"
+      >
+        <div
+          class="box-border w-[600px] px-5 py-2 m-4 rounded-2xl bg-zinc-700 md:h-[100px] h-150 flex justify-between"
+        >
+          <div>
+            <h1 class="p-1 text-white md:text-2xl">
+              01.<span class="px-5 font-bold text-yellow-500">Frontend</span>
+            </h1>
+            <p class="px-14 text-white md:text-xl text-left">
+              Lorem ipsum dolor sit amet consectetur.
+            </p>
+          </div>
+          <div>
+            <img
+              class="md:w-12 w-10 ml-5 cursor-pointer"
+              src="img/righr-up.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div
+          class="w-[600px] box-border px-5 py-2 rounded-2xl bg-zinc-700 md:h-[100px] h-150 flex justify-between mt-4"
+        >
+          <div>
+            <h1 class="p-1 text-white md:text-2xl">
+              02.<span class="px-5 font-bold text-yellow-500">Backend</span>
+            </h1>
+            <p class="text-white px-10 md:text-xl text-left">
+              Lorem ipsum dolor sit amet consectetur.
+            </p>
+          </div>
+          <div>
+            <img
+              class="cursor-pointer md:w-12 w-10 ml-5"
+              src="img/righr-up.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div
+          class="w-[600px] box-border px-5 py-2 rounded-2xl bg-zinc-700 md:h-[100px] h-150 flex justify-between mt-4 ml-3"
+        >
+          <div>
+            <h1 class="p-1 text-white md:text-2xl">
+              03.<span class="px-5 font-bold text-yellow-500"
+                >UI/UX Design</span
+              >
+            </h1>
+            <p class="text-white px-10 md:text-xl text-left">
+              Lorem ipsum dolor sit amet consectetur.
+            </p>
+          </div>
+          <div>
+            <img
+              class="cursor-pointer md:w-12 w-10 ml-5"
+              src="img/righr-up.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div
+          class="box-border w-[600px] px-5 py-2 rounded-2xl bg-zinc-700 md:h-[100px] h-150 flex justify-between mt-4 ml-3"
+        >
+          <div>
+            <h1 class="p-1 text-white md:text-2xl">
+              04.<span class="px-5 font-bold text-yellow-500">Database</span>
+            </h1>
+            <p class="px-14 text-white md:text-xl text-sm text-left">
+              Lorem ipsum dolor sit amet consectetur.
+            </p>
+          </div>
+          <div>
+            <img
+              class="md:w-12 w-10 ml-5 cursor-pointer"
+              src="img/righr-up.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div
+          class="w-[600px] px-5 py-2 rounded-2xl bg-zinc-700 md:h-[100px] h-150 flex mt-4 justify-between ml-3"
+        >
+          <div>
+            <h1 class="p-1 text-white md:text-2xl">
+              05.<span class="px-5 font-bold text-yellow-500">Web Design</span>
+            </h1>
+            <p class="px-14 text-white md:text-xl text-sm text-left">
+              Lorem ipsum dolor sit amet consectetur.
+            </p>
+          </div>
+          <div>
+            <img
+              class="md:w-12 w-10 ml-5 cursor-pointer"
+              src="img/righr-up.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <!-- cards ends here -->
+    </section>
+
+    <!-- skills -->
+    <section id="skills">
+      <div
+        class="flex mt-20 max-w-full justify-center items-center bg-slate-800 py-10"
+      >
+        <div
+          class="flex flex-col md:flex-row justify-around bg-slate-900 p-6 max-w-7xl mx-auto"
+        >
+          <div class="text-white md:w-2/3 space-y-4 text-center md:text-left">
+            <h1 class="text-2xl text-left">Skills</h1>
+            <h2 class="md:text-4xl text-2xl font-mono font-bold text-left">
+              Let's Explore Popular <br />
+              <span class="text-yellow-500">Skills and Experience</span>
+            </h2>
+            <p
+              class="md:text-2xl text-md md:leading-relaxed text-left text-wrap"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              rem quo id vero, esse magni voluptatem quam, accusamus earum
+              facere odit molestiae voluptatem, aliquid laudantium! Et excepturi
+            </p>
+            <div>
+              <button
+                class="bg-yellow-400 px-5 py-3 text-xl font-semibold border-none rounded-xl hover:bg-yellow-500"
+              >
+                Learn More >
+              </button>
+            </div>
+          </div>
+
+          <div class="md:w-2/3 flex flex-wrap justify-center mt-8 md:mt-0">
+            <!-- HTML Card -->
+            <div
+              class="flex justify-center items-center bg-slate-800 w-36 h-40 mx-auto px-5 py-5 m-2 shadow-lg"
+            >
+              <div class="space-y-2 p-5">
+                <img
+                  src="img/html.png"
+                  alt="HTML Logo"
+                  class="w-14 h-14 mx-2 rounded-lg shadow-lg"
+                />
+                <p class="px-2 text-white text-xl text-center">HTML</p>
+                <h3
+                  class="border-2 border-yellow-500 text-white px-3 py-3 text-center m-2 rounded-xl hover:bg-yellow-500 hover:text-black"
+                >
+                  90%
+                </h3>
+              </div>
+            </div>
+
+            <!-- CSS Card -->
+            <div
+              class="flex justify-center items-center bg-slate-800 w-36 h-40 mx-auto px-5 py-5 m-2 shadow-lg"
+            >
+              <div class="space-y-2 p-5">
+                <img
+                  src="img/css.png"
+                  alt="CSS Logo"
+                  class="w-14 h-14 mx-2 rounded-lg shadow-lg"
+                />
+                <p class="px-2 text-white text-xl text-center">CSS</p>
+                <h3
+                  class="border-2 border-yellow-500 text-white px-3 py-3 text-center m-2 rounded-xl hover:bg-yellow-500 hover:text-black"
+                >
+                  90%
+                </h3>
+              </div>
+            </div>
+
+            <!-- JavaScript Card -->
+            <div
+              class="flex justify-center items-center bg-slate-800 w-36 h-40 mx-auto px-5 py-5 m-2 shadow-lg"
+            >
+              <div class="space-y-2 p-5">
+                <img
+                  src="img/js.png"
+                  alt="JavaScript Logo"
+                  class="w-14 h-14 mx-2 rounded-lg shadow-lg"
+                />
+                <p class="px-2 text-white text-xl text-center">JavaScript</p>
+                <h3
+                  class="border-2 border-yellow-500 text-white px-3 py-3 text-center m-2 rounded-xl hover:bg-yellow-500 hover:text-black"
+                >
+                  80%
+                </h3>
+              </div>
+            </div>
+
+            <!-- jQuery Card -->
+            <div
+              class="flex justify-center items-center bg-slate-800 w-36 h-40 mx-auto px-5 py-5 m-2 shadow-lg"
+            >
+              <div class="space-y-2 p-5">
+                <img
+                  src="img/jq.png"
+                  alt="jQuery Logo"
+                  class="w-20 h-16 rounded-lg shadow-lg"
+                />
+                <p class="px-2 text-white text-xl text-center">jQuery</p>
+                <h3
+                  class="border-2 border-yellow-500 text-white px-3 py-3 text-center m-2 rounded-xl hover:bg-yellow-500 hover:text-black"
+                >
+                  80%
+                </h3>
+              </div>
+            </div>
+
+            <!-- Bootstrap Card -->
+            <div
+              class="flex justify-center items-center bg-slate-800 w-36 h-40 mx-auto px-5 py-5 m-2 shadow-lg"
+            >
+              <div class="space-y-2 p-5">
+                <img
+                  src="img/bootstrap.png"
+                  alt="Bootstrap Logo"
+                  class="w-14 h-14 mx-auto rounded-lg shadow-lg"
+                />
+                <p class="px-2 text-white text-[10px] text-center">Bootstrap</p>
+                <h3
+                  class="border-2 border-yellow-500 text-white px-2 py-3 text-center m-2 rounded-xl hover:bg-yellow-500 hover:text-black"
+                >
+                  90%
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- proejct -->
+    <section class="w-full py-10 bg-black">
+      <h1 class="text-center text-xl text-white">Latest Works</h1>
+      <h2 class="text-center text-2xl text-white">Explore My Popular Projects
+</h2>
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-around gap-8 mt-4"
+      >
+        <!-- Left: Image Section -->
+        <div class="w-full mt-4 md:w-1/2 flex justify-center">
+          <img
+            src="img/project-img-1.png"
+            alt="Project Showcase"
+            class="w-[500px]  rounded-lg shadow-lg"
+          />
+        </div>
+        <!-- Right: Content Section -->
+        <div class="w-full md:w-1/3 text-left mt-5 ml-4 md:ml-0">
+          <h4 class="text-yellow-500 md:text-sm text-md  font-bold mb-2 ml-4">Website Design</h4>
+          <h2 class="text-white text-3xl font-bold mb-4">My Portfolio</h2>
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Hello! This is my personal portfolio website built using HTML, TailwindCSS,
+            jQuery, JavaScript. This portfolio is fully
+            responsive across all devices.
+          </p>
+          <!-- <a
+            href="#"
+            class="inline-flex items-center text-yellow-500 font-bold hover:underline"
+          >
+            <span>View Project</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ml-2 "
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </a> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Container -->
+    <div class="bg-gray-900 text-white py-10 px-6 md:px-16">
+      <!-- Contact Header -->
+      <div class="flex flex-col md:flex-row md:justify-between mb-8">
+        <div class="mb-8 md:mb-0 md:w-1/2">
+          <h2 class="text-xl font-bold mb-2">Get in Touch</h2>
+          <h3 class="text-2xl font-semibold text-yellow-400">
+            Let's Talk For your Next Projects
+          </h3>
+          <p class="text-gray-400 mt-4 mb-4">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa,
+            odio!
+          </p>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center">
+              <span class="text-yellow-400 mr-2">✔</span> Professional Web
+              Designer
+            </li>
+            <li class="flex items-center">
+              <span class="text-yellow-400 mr-2">✔</span> Frontend Developer
+            </li>
+            <li class="flex items-center">
+              <span class="text-yellow-400 mr-2">✔</span> Backend Developer
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="md:w-1/2">
+          <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input
+              type="text"
+              placeholder="Full Name"
+              class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
+            />
+            <input
+              type="text"
+              placeholder="Phone Number"
+              class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
+            />
+            <input
+              type="text"
+              placeholder="Subject"
+              class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
+            />
+            <textarea
+              placeholder="Write Message..."
+              class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black md:col-span-2"
+            ></textarea>
+            <button
+              type="submit"
+              class="bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-md hover:bg-yellow-500 md:col-span-2 flex items-center justify-center"
+            >
+              Send Us Message
+              <span class="ml-2">✈️</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div
+      class="container max-w-full flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-8 bg-slate-700 px-6 md:px-16"
+    >
+      <!-- Left section with icon and name -->
+      <div class="flex items-center space-x-2">
+        <div
+          class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center"
+        >
+          <!-- Placeholder for avatar -->
+          <img src="img/logo.png" alt="Avatar" class="w-10 h-10 rounded-full" />
+        </div>
+        <span class="text-xl font-bold text-yellow-400">Vaibhav</span>
+      </div>
+
+      <!-- Quick Links -->
+      <div
+        class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 mt-8 md:mt-0"
+      >
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white">Service</a>
+          <a href="#" class="text-gray-400 hover:text-white">Projects</a>
+          <a href="#" class="text-gray-400 hover:text-white">Skills</a>
+          <a href="#" class="text-gray-400 hover:text-white">Contact</a>
+        </div>
+        <!-- Newsletter Signup -->
+        <div class="flex items-center space-x-2">
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="bg-gray-800 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
+          />
+          <button
+            class="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md hover:bg-yellow-500"
+          >
+            Sign up
+          </button>
+        </div>
+      </div>
+
+      <!-- Address Section -->
+      <div class="mt-8 md:mt-0 p-5">
+        <p class="text-gray-400">Address</p>
+        <div class="flex flex-col space-y-2 text-gray-300">
+          <p class="flex items-center">
+            <span class="mr-2">📍</span> wadilal, Gosalia Road, Sanjay Nagar,
+            Sundar Gali, <br />Kandivali(West), Mumbai - 400067
+          </p>
+          <p class="flex items-center">
+            <span class="mr-2">✉️</span> upadhyayvaibhav229@gmail.com
+          </p>
+          <p class="flex items-center">
+            <span class="mr-2">📞</span> +91 9004523446
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="footer container flex justify-between py-5 px-5 font-light items-center relative"
+    >
+      <div>
+        <p class="text-xl text-white text-center mt-5">
+          Copywrite @ 2024 , Vaibhav All right reserverd
+        </p>
+      </div>
+
+      <!-- <div class="w-8 bg-yellow-500 absolute "> k</div> -->
+
+      <div>
+        <ul class="list-style-none text-white flex gap-4 p-5">
+          <li><a href="github">Github</a></li>
+          <li><a href="twitter">Twitter</a></li>
+          <li><a href="instagram">Instagram</a></li>
+          <li><a href="linkedin">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      function toggleNavbar() {
+        const navbarContent = document.getElementById("navbar-content");
+        navbarContent.classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>
