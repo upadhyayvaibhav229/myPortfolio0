@@ -10,6 +10,3 @@ body{
 font-family: "Itim", cursive;
 }
 
-#service::-webkit-scrollbar{
-    display: none;
-}

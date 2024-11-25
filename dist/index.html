@@ -12,98 +12,129 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- jQuery cdn -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   </head>
   <body class="bg-slate-900">
-    <!-- Navbar Container -->
+<!-- Navbar Container -->
+<nav class="relative container flex items-center justify-between p-4 bg-slate-900 max-w-full">
+  <!-- Left Section: Logo -->
+  <div class="flex items-center gap-2">
+    <img src="img/logo.png" alt="Logo" class="w-10 h-10 rounded-full" />
+    <h1 class="text-yellow-500 text-xl font-mono">Vaibhav</h1>
+  </div>
 
-    <nav
-      class="container flex items-center justify-between p-4 bg-slate-900 w-[100%]"
-    >
-      <!-- Left Section: Logo -->
-      <div class="flex items-center gap-2">
-        <img src="img/logo.png" alt="Logo" class="w-10 h-10 rounded-full" />
-        <h1 class="text-yellow-500 text-xl font-mono">Vaibhav</h1>
-      </div>
+  <!-- Center Section: Navigation Menu -->
+  <div class=" items-center gap-8 md:flex hidden">
+    <ul class="list-none flex items-center gap-6 cursor-pointer">
+      <li class="hover:bg-slate-950 px-4 py-2 rounded-lg">
+        <a href="#home" class="text-white text-lg font-semibold">Home</a>
+      </li>
+      <li class="hover:bg-slate-950 px-4 py-2 rounded-lg">
+        <a href="#about" class="text-white text-lg font-semibold">About</a>
+      </li>
+      <li class="hover:bg-slate-950 px-4 py-2 rounded-lg">
+        <a href="#services" class="text-white text-lg font-semibold">Services</a>
+      </li>
+      <li class="hover:bg-slate-950 px-4 py-2 rounded-lg">
+        <a href="#skills" class="text-white text-lg font-semibold">Skills</a>
+      </li>
+      <li class="hover:bg-slate-950 px-4 py-2 rounded-lg">
+        <a href="#contacts" class="text-white text-lg font-semibold">Contact</a>
+      </li>
+    </ul>
+  </div>
 
-      <!-- Center Section: Social Media Icons (only visible on larger screens) -->
-      <div class="hidden md:flex gap-6">
-        <i class="fa-brands fa-github text-yellow-500 text-3xl"></i>
-        <i class="fa-brands fa-instagram text-yellow-500 text-3xl"></i>
-        <i class="fa-brands fa-linkedin-in text-yellow-500 text-3xl"></i>
-        <i class="fa-brands fa-twitter text-yellow-500 text-3xl"></i>
-      </div>
+  <!-- Right Section: Theme Changer Icon -->
+  <div class="border border-yellow-500 p-2 rounded-full hidden md:block">
+    <i class="fa fa-cog text-yellow-500 text-3xl"></i>
+  </div>
 
-      <div class="border border-yellow-500 p-2 rounded-full hidden md:block">
-        <i class="fa fa-cog text-yellow-500 text-3xl"></i>
-      </div>
+  <!-- Hamburger Icon for Mobile -->
+  <div
+    class="md:hidden text-gray-400 text-3xl cursor-pointer"
+    onclick="toggleNavbar"
+  >
+    <i class="fa fa-bars"></i>
+  </div>
+</nav>
 
-      <div
-        class="md:hidden text-gray-400 text-3xl cursor-pointer"
-        onclick="toggleNavbar()"
+<!-- Navbar Content for Mobile -->
+<div
+  id="navbar-content"
+  class="absolute top-full right-0 w-full bg-slate-800 p-4 rounded-lg hidden"
+>
+  <!-- Navigation Menu for smaller screens -->
+  <ul class="flex flex-col items-end gap-4">
+    <li>
+      <a href="#home" class="text-white text-lg font-semibold hover:text-yellow-500">Home</a>
+    </li>
+    <li>
+      <a href="#about" class="text-white text-lg font-semibold hover:text-yellow-500">About</a>
+    </li>
+    <li>
+      <a href="#services" class="text-white text-lg font-semibold hover:text-yellow-500">Services</a>
+    </li>
+    <li>
+      <a href="#skills" class="text-white text-lg font-semibold hover:text-yellow-500">Skills</a>
+    </li>
+    <li>
+      <a href="#contacts" class="text-white text-lg font-semibold hover:text-yellow-500">Contact</a>
+    </li>
+  </ul>
+</div>
+
+<script>
+ const toggleNavbar = $(document).ready(function () {
+  // Navbar toggle functionality
+  $(".fa-bars").on("click", function () {
+    $("#navbar-content").toggleClass("hidden");
+  })
+});
+
+</script>
+
+// <!-- Hero Section -->
+
+<div
+  class="container flex flex-wrap justify-around items-center bg-slate-70 md:min-h-screen max-w-full pb-10"
+>
+  <!-- Text Content -->
+  <div class="p-2 pt-5 ml-4">
+    <h1 class="text-white text-xl font-bold leading-6">Hello, I'm</h1>
+    <h1 class="text-yellow-500 text-2xl font-bold">Vaibhav Upadhyay</h1>
+    <h1 class="text-white text-3xl font-bold leading-7">
+      Full Stack Developer
+    </h1>
+    <p class="text-white text-xl leading-8">
+      Lorem ipsum dolor sit amet consectetur, <br />
+      adipisicing elit. Saepe, minus?
+    </p>
+    <div class="flex space-x-2">
+      <button
+        class="px-6 py-2 mt-4 rounded-lg bg-yellow-300 hover:bg-yellow-400 text-lg font-semibold"
       >
-        <i class="fa fa-bars"></i>
-      </div>
-      <!-- Right Section: Theme Changer Icon -->
-    </nav>
-
-    <div
-      id="navbar-content"
-      class="md:hidden flex flex-row justify-around items-center gap-6 mt-4 hidden"
-    >
-      <div class="border border-yellow-500 p-2 rounded-full mt-20">
-        <i class="fa fa-cog text-yellow-500 text-3xl"></i>
-      </div>
-
-      <div class="flex flex-col gap-4 p-5 mr-5">
-        <i class="fa-brands fa-github text-yellow-500 text-3xl"></i>
-        <i class="fa-brands fa-instagram text-yellow-500 text-3xl"></i>
-        <i class="fa-brands fa-linkedin-in text-yellow-500 text-3xl"></i>
-        <i class="fa-brands fa-twitter text-yellow-500 text-3xl"></i>
-      </div>
+        Hire Me!
+      </button>
+      <button
+        class="px-9 py-2 mt-4 rounded-lg bg-transparent border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-400 hover:text-black text-lg font-semibold"
+      >
+        Download CV
+      </button>
     </div>
+  </div>
 
-    <!-- Navbar ends here -->
+  <!-- Profile Image -->
+  <div>
+    <img
+      class="w-[500px] rounded-full"
+      src="img/vaibhav.png"
+      alt="Profile Image"
+    />
+  </div>
 
-    <!-- Hero section starts here -->
-    <div
-      class="container flex flex-wrap justify-around items-center bg-slate-700 md:min-h-screen pb-10"
-    >
-      <!-- Text Content -->
-      <div class="p-2 pt-5 ml-4">
-        <h1 class="text-white text-xl font-bold leading-6">Hello, I'm</h1>
-        <h1 class="text-yellow-500 text-2xl font-bold">Vaibhav Upadhyay</h1>
-        <h1 class="text-white text-3xl font-bold leading-7">
-          Full Stack Developer
-        </h1>
-        <p class="text-white text-xl leading-8">
-          Lorem ipsum dolor sit amet consectetur, <br />
-          adipisicing elit. Saepe, minus?
-        </p>
-        <div class="flex space-x-2">
-          <button
-            class="px-6 py-2 mt-4 rounded-lg bg-yellow-300 hover:bg-yellow-400 text-lg font-semibold"
-          >
-            Hire Me!
-          </button>
-          <button
-            class="px-9 py-2 mt-4 rounded-lg bg-transparent border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-400 hover:text-black text-lg font-semibold"
-          >
-            Download CV
-          </button>
-        </div>
-      </div>
-
-      <!-- Image -->
-      <div>
-        <img
-          class="w-[500px] rounded-full"
-          src="img/vaibhav.png"
-          alt="Profile Image"
-        />
-      </div>
-
-      <!-- Experience Section -->
-      <div class="bg-slate-900 text-white rounded-lg h-64 w-72 p-4 mt-4">
+  <div class="bg-slate-800 text-white rounded-lg h-64 w-72 p-4 mt-4">
         <div class="mt-3">
           <h1 class="text-2xl text-yellow-500">20+</h1>
           <p class="text-xl">Demo Project</p>
@@ -114,55 +145,26 @@
         </div>
       </div>
 
-      <!-- Menu -->
-      <div
-        class="flex-col h-50 w-24 border-2 border-yellow-500 mt-12 text-center rounded-lg md:block hidden"
-      >
-        <ul class="list-none md:space-y-6 space-x-2 cursor-pointer">
-          <li class="hover:bg-slate-950 py-3 rounded-lg">
-            <a href="#home" class="flex flex-col items-center">
-              <i class="fa fa-home text-white md:text-3xl text-xl"></i>
-              <span class="text-white text-sm font-semibold mt-2">Home</span>
-            </a>
-          </li>
-          <li class="hover:bg-slate-950 py-3 rounded-lg">
-            <a href="#about" class="flex flex-col items-center">
-              <i class="fa fa-user text-white text-3xl"></i>
-              <span class="text-white text-sm font-semibold mt-2">About</span>
-            </a>
-          </li>
-          <li class="hover:bg-slate-950 py-3 rounded-lg">
-            <a href="#" class="flex flex-col items-center">
-              <i class="fa fa-gear text-white text-3xl"></i>
-              <span class="text-white text-sm font-semibold mt-2"
-                >Services</span
-              >
-            </a>
-          </li>
-          <li class="hover:bg-slate-950 py-3 rounded-lg">
-            <a href="#" class="flex flex-col items-center">
-              <i class="fa fa-layer-group text-white text-3xl"></i>
-              <span class="text-white text-sm font-semibold mt-2">Skills</span>
-            </a>
-          </li>
-          <li class="hover:bg-slate-950 py-3 rounded-lg">
-            <a href="#" class="flex flex-col items-center">
-              <i class="fa fa-address-card text-white text-3xl"></i>
-              <span class="text-white text-sm font-semibold mt-2">Contact</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+
+
+  <!-- Social Media Icons (previously in navbar) -->
+  <div class="hidden md:flex flex-col border border-yellow-500 gap-6 ">
+  <a href=""><i class="fa-brands fa-github text-yellow-500 text-3xl p-5 hover:text-red-500 hover:bg-gray-800 rounded-lg cursor-pointer"></i></a>
+  <a href=""><i class="fa-brands fa-instagram text-yellow-500 text-3xl p-5 hover:text-pink-500 hover:bg-gray-800 rounded-lg cursor-pointer"></i></a>
+  <a href=""><i class="fa-brands fa-linkedin-in text-yellow-500 text-3xl p-5 hover:text-blue-500 hover:bg-gray-800 rounded-lg cursor-pointer"></i></a>
+  <a href=""><i class="fa-brands fa-twitter text-yellow-500 text-3xl p-5 hover:text-blue-400 hover:bg-gray-800 rounded-lg cursor-pointer"></i></a>
+</div>
+
+</div>
 
     <!-- Hero SEctiont ends here -->
 
     <!-- About Me Section -->
-    <section id="#about">
+    <section id="#about " class="mt-10">
       <div class="flex w-full justify-center items-center bg-slate-800 py-10">
         <!-- Reduced padding -->
         <div
-          class="flex flex-col md:flex-row justify-between items-center bg-slate-900 p-6 max-w-7xl mx-auto"
+          class="flex flex-col md:flex-row justify-between items-center bg-slate-90 p-6 max-w-7xl mx-auto"
         >
           <div class="text-white md:w-1/2 space-y-4 text-center md:text-left">
             <!-- Reduced space-y -->
@@ -299,129 +301,112 @@
     <!-- About me end here -->
 
     <!-- Service Section starts here -->
-    <section class="max-h-screen w-full p-5" id="service">
-      <div class="text-white space-y-4 text-center md:text-center">
+    <section class="h-auto w-full p-5" id="#services">
+      <div class="text-white space-y-4 text-center">
         <h1 class="text-white text-3xl p-5 font-bold">Popular Services</h1>
         <p class="text-white text-2xl leading-relaxed">
-          My
-          <span class="text-yellow-500">Special Service</span> For your <br />
+          My <span class="text-yellow-500">Special Service</span> For your
+          <br />
           Frontend & Backend Dev.
         </p>
       </div>
 
       <!-- Cards -->
-      <div
-        class="p-4 mt-5 mx-auto md:flex md:flex-wrap justify-around h-auto max-w-7xl overflow-y-auto flex md:overflow-visible scrollbar-thin scrollbar-thumb-yellow-500 scrollbar-track-gray-800"
-      >
+      <div class="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto p-5">
+        <!-- Card 1 -->
         <div
-          class="box-border w-[600px] px-5 py-2 m-4 rounded-2xl bg-zinc-700 md:h-[100px] h-150 flex justify-between"
+          class="flex items-center justify-between bg-zinc-700 rounded-2xl p-4 shadow-lg"
         >
           <div>
-            <h1 class="p-1 text-white md:text-2xl">
-              01.<span class="px-5 font-bold text-yellow-500">Frontend</span>
-            </h1>
-            <p class="px-14 text-white md:text-xl text-left">
+            <h2 class="text-white font-bold text-lg">
+              01. <span class="text-yellow-500">Frontend</span>
+            </h2>
+            <p class="text-gray-400 text-sm">
               Lorem ipsum dolor sit amet consectetur.
             </p>
           </div>
           <div>
-            <img
-              class="md:w-12 w-10 ml-5 cursor-pointer"
-              src="img/righr-up.png"
-              alt=""
-            />
+            <img class="w-10 h-10" src="img/righr-up.png" alt="Arrow Icon" />
           </div>
         </div>
 
+        <!-- Card 2 -->
         <div
-          class="w-[600px] box-border px-5 py-2 rounded-2xl bg-zinc-700 md:h-[100px] h-150 flex justify-between mt-4"
+          class="flex items-center justify-between bg-zinc-700 rounded-2xl p-4 shadow-lg"
         >
           <div>
-            <h1 class="p-1 text-white md:text-2xl">
-              02.<span class="px-5 font-bold text-yellow-500">Backend</span>
-            </h1>
-            <p class="text-white px-10 md:text-xl text-left">
+            <h2 class="text-white font-bold text-lg">
+              02. <span class="text-yellow-500">App Dev.</span>
+            </h2>
+            <p class="text-gray-400 text-sm">
               Lorem ipsum dolor sit amet consectetur.
             </p>
           </div>
           <div>
-            <img
-              class="cursor-pointer md:w-12 w-10 ml-5"
-              src="img/righr-up.png"
-              alt=""
-            />
+            <img class="w-10 h-10" src="img/righr-up.png" alt="Arrow Icon" />
           </div>
         </div>
 
+        <!-- Card 3 -->
         <div
-          class="w-[600px] box-border px-5 py-2 rounded-2xl bg-zinc-700 md:h-[100px] h-150 flex justify-between mt-4 ml-3"
+          class="flex items-center justify-between bg-zinc-700 rounded-2xl p-4 shadow-lg"
         >
           <div>
-            <h1 class="p-1 text-white md:text-2xl">
-              03.<span class="px-5 font-bold text-yellow-500"
-                >UI/UX Design</span
-              >
-            </h1>
-            <p class="text-white px-10 md:text-xl text-left">
+            <h2 class="text-white font-bold text-lg">
+              03. <span class="text-yellow-500">Backend</span>
+            </h2>
+            <p class="text-gray-400 text-sm">
               Lorem ipsum dolor sit amet consectetur.
             </p>
           </div>
           <div>
-            <img
-              class="cursor-pointer md:w-12 w-10 ml-5"
-              src="img/righr-up.png"
-              alt=""
-            />
+            <img class="w-10 h-10" src="img/righr-up.png" alt="Arrow Icon" />
           </div>
         </div>
 
+        <!-- Card 4 -->
         <div
-          class="box-border w-[600px] px-5 py-2 rounded-2xl bg-zinc-700 md:h-[100px] h-150 flex justify-between mt-4 ml-3"
+          class="flex items-center justify-between bg-zinc-700 rounded-2xl p-4 shadow-lg"
         >
           <div>
-            <h1 class="p-1 text-white md:text-2xl">
-              04.<span class="px-5 font-bold text-yellow-500">Database</span>
-            </h1>
-            <p class="px-14 text-white md:text-xl text-sm text-left">
+            <h2 class="text-white font-bold text-lg">
+              04. <span class="text-yellow-500">Database</span>
+            </h2>
+            <p class="text-gray-400 text-sm">
               Lorem ipsum dolor sit amet consectetur.
             </p>
           </div>
           <div>
-            <img
-              class="md:w-12 w-10 ml-5 cursor-pointer"
-              src="img/righr-up.png"
-              alt=""
-            />
+            <img class="w-10 h-10" src="img/righr-up.png" alt="Arrow Icon" />
           </div>
         </div>
 
+       
+       
+
+        <!-- Card 6 -->
         <div
-          class="w-[600px] px-5 py-2 rounded-2xl bg-zinc-700 md:h-[100px] h-150 flex mt-4 justify-between ml-3"
+          class="flex items-center justify-between bg-zinc-700 rounded-2xl p-4 shadow-lg"
         >
           <div>
-            <h1 class="p-1 text-white md:text-2xl">
-              05.<span class="px-5 font-bold text-yellow-500">Web Design</span>
-            </h1>
-            <p class="px-14 text-white md:text-xl text-sm text-left">
+            <h2 class="text-white font-bold text-lg">
+              06. <span class="text-yellow-500">Web Design</span>
+            </h2>
+            <p class="text-gray-400 text-sm">
               Lorem ipsum dolor sit amet consectetur.
             </p>
           </div>
           <div>
-            <img
-              class="md:w-12 w-10 ml-5 cursor-pointer"
-              src="img/righr-up.png"
-              alt=""
-            />
+            <img class="w-10 h-10" src="img/righr-up.png" alt="Arrow Icon" />
           </div>
         </div>
       </div>
-      <!-- cards ends here -->
     </section>
 
     <!-- skills -->
-    <section id="skills">
+    <section id="#skills">
       <div
-        class="flex mt-20 max-w-full justify-center items-center bg-slate-800 py-10"
+        class="flex mt-48 max-w-full justify-center items-center bg-slate-800 py-10"
       >
         <div
           class="flex flex-col md:flex-row justify-around bg-slate-900 p-6 max-w-7xl mx-auto"
@@ -549,10 +534,11 @@
     </section>
 
     <!-- proejct -->
-    <section class="w-full py-10 bg-black">
+    <section id="#projects" class="w-full py-10 bg-black p-5">
       <h1 class="text-center text-xl text-white">Latest Works</h1>
-      <h2 class="text-center text-2xl text-white">Explore My Popular Projects
-</h2>
+      <h2 class="text-center text-2xl text-white">
+        Explore My Popular Projects
+      </h2>
       <div
         class="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-around gap-8 mt-4"
       >
@@ -561,17 +547,19 @@
           <img
             src="img/project-img-1.png"
             alt="Project Showcase"
-            class="w-[500px]  rounded-lg shadow-lg"
+            class="w-[500px] rounded-lg shadow-lg"
           />
         </div>
         <!-- Right: Content Section -->
         <div class="w-full md:w-1/3 text-left mt-5 ml-4 md:ml-0">
-          <h4 class="text-yellow-500 md:text-sm text-md  font-bold mb-2 ml-4">Website Design</h4>
+          <h4 class="text-yellow-500 md:text-sm text-md font-bold mb-2 ml-4">
+            Website Design
+          </h4>
           <h2 class="text-white text-3xl font-bold mb-4">My Portfolio</h2>
           <p class="text-gray-300 leading-relaxed mb-6">
-            Hello! This is my personal portfolio website built using HTML, TailwindCSS,
-            jQuery, JavaScript. This portfolio is fully
-            responsive across all devices.
+            Hello! This is my personal portfolio website built using HTML,
+            TailwindCSS, jQuery, JavaScript. This portfolio is fully responsive
+            across all devices.
           </p>
           <!-- <a
             href="#"
@@ -597,71 +585,74 @@
       </div>
     </section>
 
-    <!-- Container -->
-    <div class="bg-gray-900 text-white py-10 px-6 md:px-16">
-      <!-- Contact Header -->
-      <div class="flex flex-col md:flex-row md:justify-between mb-8">
-        <div class="mb-8 md:mb-0 md:w-1/2">
-          <h2 class="text-xl font-bold mb-2">Get in Touch</h2>
-          <h3 class="text-2xl font-semibold text-yellow-400">
-            Let's Talk For your Next Projects
-          </h3>
-          <p class="text-gray-400 mt-4 mb-4">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa,
-            odio!
-          </p>
-          <ul class="space-y-2 text-gray-300">
-            <li class="flex items-center">
-              <span class="text-yellow-400 mr-2">✔</span> Professional Web
-              Designer
-            </li>
-            <li class="flex items-center">
-              <span class="text-yellow-400 mr-2">✔</span> Frontend Developer
-            </li>
-            <li class="flex items-center">
-              <span class="text-yellow-400 mr-2">✔</span> Backend Developer
-            </li>
-          </ul>
-        </div>
+    <section id="contact">
 
-        <!-- Contact Form -->
-        <div class="md:w-1/2">
-          <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input
-              type="text"
-              placeholder="Full Name"
-              class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
-            />
-            <input
-              type="text"
-              placeholder="Phone Number"
-              class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
-            />
-            <input
-              type="text"
-              placeholder="Subject"
-              class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
-            />
-            <textarea
-              placeholder="Write Message..."
-              class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black md:col-span-2"
-            ></textarea>
-            <button
-              type="submit"
-              class="bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-md hover:bg-yellow-500 md:col-span-2 flex items-center justify-center"
-            >
-              Send Us Message
-              <span class="ml-2">✈️</span>
-            </button>
-          </form>
+      <!-- Container -->
+      <div class="bg-gray-900 text-white py-10 px-6 md:px-16">
+        <!-- Contact Header -->
+        <div class="flex flex-col md:flex-row md:justify-between mb-8">
+          <div class="mb-8 md:mb-0 md:w-1/2">
+            <h2 class="text-xl font-bold mb-2">Get in Touch</h2>
+            <h3 class="text-2xl font-semibold text-yellow-400">
+              Let's Talk For your Next Projects
+            </h3>
+            <p class="text-gray-400 mt-4 mb-4">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa,
+              odio!
+            </p>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-center">
+                <span class="text-yellow-400 mr-2">✔</span> Professional Web
+                Designer
+              </li>
+              <li class="flex items-center">
+                <span class="text-yellow-400 mr-2">✔</span> Frontend Developer
+              </li>
+              <li class="flex items-center">
+                <span class="text-yellow-400 mr-2">✔</span> Backend Developer
+              </li>
+            </ul>
+          </div>
+  
+          <!-- Contact Form -->
+          <div class="md:w-1/2">
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input
+                type="text"
+                placeholder="Full Name"
+                class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
+              />
+              <input
+                type="text"
+                placeholder="Phone Number"
+                class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
+              />
+              <input
+                type="text"
+                placeholder="Subject"
+                class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black"
+              />
+              <textarea
+                placeholder="Write Message..."
+                class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white focus:text-black md:col-span-2"
+              ></textarea>
+              <button
+                type="submit"
+                class="bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-md hover:bg-yellow-500 md:col-span-2 flex items-center justify-center"
+              >
+                Send Us Message
+                <span class="ml-2">✈️</span>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Footer -->
     <div
       class="container max-w-full flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-8 bg-slate-700 px-6 md:px-16"
@@ -732,7 +723,7 @@
       <!-- <div class="w-8 bg-yellow-500 absolute "> k</div> -->
 
       <div>
-        <ul class="list-style-none text-white flex gap-4 p-5">
+        <ul class="list-style-none text-white flex flex-wrap gap-4 p-5">
           <li><a href="github">Github</a></li>
           <li><a href="twitter">Twitter</a></li>
           <li><a href="instagram">Instagram</a></li>
